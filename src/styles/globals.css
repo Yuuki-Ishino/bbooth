@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
-body {
-    background-color: #181619;
+section {
+	background-color: #181619;
+}
+
+section.no-bg {
+	background-color: transparent;
 }

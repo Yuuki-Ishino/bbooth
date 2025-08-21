@@ -13,7 +13,7 @@ function MessageSection() {
               
               東洋大学公認<br />
               ボランティアサークル<br />
-              Bboothです!
+              Bbooth
             </p>
           </div>
 
