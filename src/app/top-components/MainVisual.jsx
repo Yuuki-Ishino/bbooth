@@ -1,7 +1,7 @@
 function MainVisual() {
 	return (
 		<section
-			className="bg-[url('/images/top-image.jpg')] h-[600px] w-full bg-fixed bg-cover bg-center"
+			className="bg-[url('/images/top-image.jpg')] h-[600px] w-full bg-fixed bg-center"
 		>
 			<div className="w-[90%] max-w-[1280px] mx-auto h-full relative">
 				<div className="absolute bottom-[100px] left-0">
