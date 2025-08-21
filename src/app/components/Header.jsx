@@ -4,7 +4,8 @@ function Header() {
 
   const navItems = [
     {href: '/', label: '私たちについて'},
-    {href: '/', label: '活動内容'},
+    {href: '/intro', label: '活動紹介'},
+    {href: '/', label: '活動一覧'},
     {href: '/', label: 'お問い合わせ'},
   ];
 
@@ -22,7 +23,7 @@ function Header() {
 
   return (
     <header className="fixed z-10 h-[70px] w-full bg-black text-white opacity-90">
-      <div className="flex justify-between items-center w-[90%] max-w-[1280px] mx-auto py-[10px]">
+      <div className="flex justify-between items-center w-[] py-3 lg:w-[90%] lg:max-auto">
         {/* ロゴ */}
         <a href="/" className="logo">
           <img
@@ -35,32 +36,7 @@ function Header() {
         {/* ナビゲーション */}
         <nav>
           <ul className="flex">
-            {renderNavItems()}
-            {/* <li className="ml-[50px]">
-              <Link href="" className="block py-5 font-bold transition-opacity duration-200 hover:opacity-60">
-                幹部紹介
-              </Link>
-            </li>
-            <li className="ml-[50px]">
-              <Link href="" className="block py-5 font-bold transition-opacity duration-200 hover:opacity-60">
-                私たちについて
-              </Link>
-            </li>
-            <li className="ml-[50px]">
-              <Link href="" className="block py-5 font-bold transition-opacity duration-200 hover:opacity-60">
-                活動内容
-              </Link>
-            </li>
-            <li className="ml-[50px]">
-              <Link href="" className="block py-5 font-bold transition-opacity duration-200 hover:opacity-60">
-                お問い合わせ
-              </Link>
-            </li>
-            <li className="ml-[50px]">
-              <Link href="" className="block py-5 font-bold transition-opacity duration-200 hover:opacity-60">
-                ログイン
-              </Link>
-            </li> */}
+            {/* {renderNavItems()} */}
           </ul>
         </nav>
       </div>

@@ -16,7 +16,12 @@ export default function Page() {
         items={activities.items}
       />
       <ContactSection 
+        title="お問い合わせ"
+        subtitle="CONTACT"
+        text={`ボランティアの依頼は以下の FORM ボタンから情報を入力するか、公式ライン、公式X、公式Instagramまで連絡ください。`}
+        buttonText="FORM"
         imageSrc="./images/top-image.jpg"
+        imageAlt="お問い合わせ"
       />
     </>
   );

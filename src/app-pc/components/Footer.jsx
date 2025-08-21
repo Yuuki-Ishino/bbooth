@@ -28,7 +28,7 @@ function Footer() {
           Bbooth  2025
         </a>
 
-        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-2 mb-10">
+        <ul className="flex justify-center mb-10">
           {renderNavItems()}
         </ul>
       </div>
