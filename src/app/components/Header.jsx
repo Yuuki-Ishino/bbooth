@@ -1,6 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import Link from 'next/link';
 
 function Header() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   const navItems = [
     {href: '/', label: '私たちについて'},
@@ -34,11 +41,49 @@ function Header() {
         </a>
         
         {/* ナビゲーション */}
-        <nav>
-          <ul className="flex">
-            {/* {renderNavItems()} */}
+          <ul className="hidden lg:flex">
+            {renderNavItems()}
           </ul>
-        </nav>
+
+        {/* ハンバーガーアイコン */}
+        
+        <div className="lg:hidden pr-5">
+          {isOpen ? (
+            <button onClick={toggleMenu} className="focus:outline-none">
+              <div className="w-6 h-0.5">X</div>
+              <div className="w-6 h-0.5"></div>
+            </button>
+          ) : (
+            <button onClick={toggleMenu} className="focus:outline-none">
+              <div className="w-6 h-0.5 bg-white mb-2"></div>
+              <div className="w-6 h-0.5 bg-white"></div>
+            </button>
+          )}
+
+
+
+
+          {/* ドロップダウンメニュー */}
+            <div
+            className={`absolute right-0 mt-5 w-45 bg-black flex flex-col transition-transfform ease-in-out
+              duration-700 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+            >
+            <ul>
+              {navItems.map((item, index) => (
+                <li key={index} className="font-bold border-t border-gray-700 mx-2">
+                  <Link
+                    href={item.href}
+                    className="block px-5 py-5 hover:text-black"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            </div>
+          
+        </div>
       </div>
     </header>
   );

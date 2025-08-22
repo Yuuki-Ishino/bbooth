@@ -4,7 +4,7 @@ import Button from "../components/Button.jsx";
 function MessageSection() {
   return (
     <section className="text-white py-20">
-      <div className="w-[90%] mx-auto max-w-[1280px] pb-20 border-b border-white">
+      <div className="w-[90%] mx-auto max-w-[1280px] pb-15 border-b border-white">
         <div className="flex flex-col justify-between">
           {/* メッセージ */}
           <div className="w-[90%] mb-[40px]">

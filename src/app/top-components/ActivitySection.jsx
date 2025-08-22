@@ -2,7 +2,7 @@ import Button from "../components/Button";
 
 function ActivitySection({ subtitle, title, items }) {
   return (
-    <section className="text-white py-20">
+    <section className="text-white lg:py-20">
       <div className="w-[90%] mx-auto max-w-[1280px] pb-20 border-b border-white">
         {/* サブタイトル */}
         <p className="text-[20px] font-bold mb-5">{subtitle}</p>
@@ -11,7 +11,7 @@ function ActivitySection({ subtitle, title, items }) {
         <p className="text-[30px] font-bold mb-[14px]">{title}</p>
 
         {/* カード一覧 */}
-        <div className="flex flex-col lg:flex-row justify-between mb-14">
+        <div className="flex flex-col lg:flex-row justify-between ">
           {items.slice(0, 3).map((item, index) => (
             <div className="relative mb-14" key={index}>
               <img
