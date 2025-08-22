@@ -10,10 +10,10 @@ function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navItems = [
-    {href: '/', label: '私たちについて'},
+    {href: '/about_us', label: '私たちについて'},
     {href: '/intro', label: '活動紹介'},
-    {href: '/', label: '活動一覧'},
-    {href: '/', label: 'お問い合わせ'},
+    {href: '/activities', label: '活動一覧'},
+    {href: '/contact', label: 'お問い合わせ'},
   ];
 
   const renderNavItems = () =>
@@ -47,7 +47,7 @@ function Header() {
 
         {/* ハンバーガーアイコン */}
         
-        <div className="lg:hidden pr-5">
+        <div className="lg:hidden mr-5 active:bg-gray-700">
           {isOpen ? (
             <button onClick={toggleMenu} className="focus:outline-none">
               <div className="w-6 h-0.5">X</div>
@@ -73,7 +73,7 @@ function Header() {
                 <li key={index} className="font-bold border-t border-gray-700 mx-2">
                   <Link
                     href={item.href}
-                    className="block px-5 py-5 hover:text-black"
+                    className="block px-5 py-5 hover:opacity-80 active:bg-gray-700"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}

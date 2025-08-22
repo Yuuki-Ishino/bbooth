@@ -3,15 +3,15 @@ import Link from 'next/link'
 function Footer() {
 
   const navItems = [
-    {href: '/', label: '私たちについて'},
-    {href: '/', label: '活動紹介'},
-    {href: '/', label: '活動一覧'},
-    {href: '/', label: 'お問い合わせ'},
+    {href: '/about_us', label: '私たちについて'},
+    {href: '/intro', label: '活動紹介'},
+    {href: '/activities', label: '活動一覧'},
+    {href: '/contact', label: 'お問い合わせ'},
   ];
 
   const renderNavItems = () =>
     navItems.map((item, index) => (
-      <li key={index} className="text-[15px] mx-5">
+      <li key={index} className="text-[15px] mx-5 active:bg-gray-700">
           <Link
             href={item.href}
             className="transition duration-200 hover:opacity-60"

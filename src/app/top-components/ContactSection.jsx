@@ -23,7 +23,7 @@ function ContactSection() {
             />
           </div>
           <div className="flex justify-center">
-            <Button>CONTACT</Button>
+            <Button href="/">FORM</Button>
           </div>
         </div>
       </div>
