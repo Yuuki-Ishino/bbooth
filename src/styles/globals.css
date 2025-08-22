@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-section {
+section, footer{
 	background-color: #181619;
 }
 
@@ -11,10 +11,11 @@ section.no-bg {
 body::before {
   content: "";
   position: fixed;
+  height: 700px;
   inset: 0;
   z-index: -1;
   background-image: url('top-image.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
