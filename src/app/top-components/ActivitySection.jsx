@@ -17,7 +17,7 @@ function ActivitySection({ subtitle, title, items }) {
               <img
                 src={item.image}
                 alt={item.alt}
-                className="w-full rounded-[20px] hover:opacity-70 "
+                className="w-full rounded-[20px] hover:opacity-70 active:opaicty-70"
               />
               <p className="bg-white/80 text-black font-bold inline-block absolute bottom-[6px] left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-[10px]">
                 {item.title}
