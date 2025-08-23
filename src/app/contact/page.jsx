@@ -1,4 +1,4 @@
-import MainVisual from "../components/MainVisual";
+import MainVisual from "@/app/components/MainVisual";
 
 export default function Page() {
 	return (

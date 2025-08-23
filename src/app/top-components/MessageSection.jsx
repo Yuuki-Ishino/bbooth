@@ -1,5 +1,5 @@
 // import App from "next/app";
-import Button from "../components/Button.jsx";
+import Button from "@/app/components/Button.jsx";
 
 function MessageSection() {
   return (

@@ -60,9 +60,6 @@ function Header() {
             </button>
           )}
 
-
-
-
           {/* ドロップダウンメニュー */}
             <div
             className={`absolute right-0 mt-5 w-45 bg-black flex flex-col transition-transfform ease-in-out

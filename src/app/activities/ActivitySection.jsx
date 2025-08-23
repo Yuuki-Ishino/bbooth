@@ -1,31 +1,20 @@
 "use client";
 
-import Button from "../components/Button";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-function ActivitySection( ) {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    fetch("/data/activities.json")
-    .then((res) => res.json())
-    .then((data) => setItems(data.items))
-    .catch((err) => console.error(err))
-  }, [])
-
+function ActivitySection({ subtitle, title, items }) {
   return (
     <section className="text-white lg:py-20">
       <div className="w-[90%] mx-auto max-w-[1280px] pb-20 border-b border-white">
         {/* サブタイトル */}
-        <p className="text-[20px] font-bold mb-5">ACTIVITIES</p>
+        <p className="text-[20px] font-bold mb-5">{subtitle}</p>
 
         {/* タイトル */}
-        <p className="text-[30px] font-bold mb-[14px]">活動記録</p>
+        <p className="text-[30px] font-bold mb-[14px]">{title}</p>
 
         {/* カード一覧 */}
         <div className="flex flex-col lg:flex-row justify-between ">
-          {items.slice(0, 3).map((item) => (
+          {items.map((item) => (
             <Link
               className="relative mb-14"
               key={item.id}
@@ -44,11 +33,6 @@ function ActivitySection( ) {
               </p>
             </Link>
           ))}
-        </div>
-
-        {/* MOREボタン */}
-        <div className="text-center">
-          <Button href="/">SEE MORE</Button>
         </div>
       </div>
     </section>
