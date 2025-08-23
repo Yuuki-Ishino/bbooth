@@ -8,7 +8,7 @@ section.no-bg {
 	background-color: transparent;
 }
 
-body::before {
+.bg-img::before {
   content: "";
   position: fixed;
   height: 700px;
