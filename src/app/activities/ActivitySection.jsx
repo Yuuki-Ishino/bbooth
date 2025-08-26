@@ -1,16 +1,26 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-function ActivitySection({ subtitle, title, items }) {
+function ActivitySection( ) {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/activities.json")
+    .then((res) => res.json())
+    .then((data) => setItems(data.items))
+    .catch((err) => console.error(err))
+  }, [])
+
   return (
     <section className="text-white lg:py-20">
       <div className="w-[90%] mx-auto max-w-[1280px] pb-20 border-b border-white">
         {/* サブタイトル */}
-        <p className="text-[20px] font-bold mb-5">{subtitle}</p>
+        <p className="text-[20px] font-bold mb-5">ACTIVITIES</p>
 
         {/* タイトル */}
-        <p className="text-[30px] font-bold mb-[14px]">{title}</p>
+        <p className="text-[30px] font-bold mb-[14px]">活動一覧</p>
 
         {/* カード一覧 */}
         <div className="flex flex-col lg:flex-row justify-between ">
@@ -23,7 +33,7 @@ function ActivitySection({ subtitle, title, items }) {
               <img
                 src={item.image}
                 alt={item.alt}
-                className="w-full rounded-[20px] hover:opacity-70 active:opaicty-70"
+                className="w-full h-[225px] rounded-[20px] hover:opacity-70 active:opaicty-70"
               />
               <p className="bg-white/80 text-black font-bold inline-block absolute bottom-[6px] left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-[10px]">
                 {item.title}
@@ -34,6 +44,7 @@ function ActivitySection({ subtitle, title, items }) {
             </Link>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -14,16 +14,37 @@ export default async function ActivityDetail({ params }) {
     }
 
     return (
-      <section className="pt-[70px]">
-        <img
-          src={activity.image}
-          alt={activity.alt}
-          className="w-full h-64 object-cover rounded"
-        />
-        <h1 className="text-white text-3xl font-bold mt-4">{activity.title}</h1>
-        <p className="text-white ">{activity.date}</p>
-        <p className="text-white  mt-4">{activity.description}</p>
+      <section className="pt-[70px] text-white">
+        <div className="w-[95%] mx-auto max-w-[800px]">
+          {/* ヘッダー画像 */}
+          <img
+            src={activity.image}
+            alt={activity.alt}
+            className="w-full h-64 object-cover rounded-lg"
+          />
+
+          {/* タイトル */}
+          <h1 className="text-2xl font-bold py-4 border-b border-white">{activity.title}</h1>
+          
+          {/* 投稿情報 */}
+          <div className="py-4 space-y-3 border-b border-white">
+            <div className="flex items-center gap-2">
+              <p>活動日: {activity.date}</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <p>活動場所: {activity.location || "未定"}</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <p>参加人数: {activity.num_people || "どなたでも"}</p>
+            </div>
+          </div>
+
+          {/* 詳細説明 */}
+          <p className="mt-6 leading-relaxed">{activity.description}</p>
+
+        </div>
       </section>
+
     );
   } catch (error) {
     return <p className="p-16 text-white">データの読み込み中にエラーが発生しました。</p>;
