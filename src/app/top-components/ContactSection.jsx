@@ -1,4 +1,5 @@
-import Button from "../components/Button";
+import { FaLine, FaXTwitter, FaInstagram } from "react-icons/fa6";
+
 
 function ContactSection() {
   return (
@@ -9,21 +10,49 @@ function ContactSection() {
           <div className="">
             <p className="text-[20px] font-bold mb-5">CONTACT</p>
             <h2 className="text-[30px] font-bold mb-10">お問い合わせ</h2>
-            <p className="leading-[1.8] mb-[50px]">
-              ボランティアの依頼は以下の FORM ボタンから情報を入力するか、公式ライン、公式X、公式Instagramまで連絡ください。
+            <p className="leading-[1.8] mb-[20px]">
+              ボランティアの依頼・相談は以下の公式Instagramまでご連絡ください。
+            </p>
+            <p className="leading-[1.8] mb-[20px]">
+              新歓情報は公式Xにて掲載しています。
+            </p>
+            <p className="leading-[1.8] mb-[20px]">
+              サークルについての個人的な質問等はLINEで受け付けています。
             </p>
           </div>
 
-          {/* 右カラム */}
-          <div className="">
-            <img
-              src="./images/top-image.jpg"
-              alt="Bbooth photo"
-              className="w-full rounded-[20px] mb-12"
-            />
-          </div>
-          <div className="flex justify-center">
-            <Button href="/">FORM</Button>
+          {/* アイコンリンク */}
+          <div className="flex space-x-8 mx-auto">
+            {/* INSTAGRAM */}
+            <a
+              href="https://www.instagram.com/bbooth2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-4xl hover:text-pink-400 active:text-pink-400 transition-colors"
+            >
+              <FaInstagram />
+            </a>
+
+            {/* X */}
+            <a
+              href="https://x.com/bbooth2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-4xl hover:text-blue-400 active:text-blue-400 transition-colors"
+            >
+              <FaXTwitter />
+            </a>
+
+            {/* LINE */}
+            <a
+              href="https://line.me/ti/p/Fp2SOvqRrO"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-4xl hover:text-green-400 active:text-green-400 transition-colors"
+            >
+              <FaLine />
+            </a>
+
           </div>
         </div>
       </div>

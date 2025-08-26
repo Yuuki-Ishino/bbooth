@@ -29,7 +29,7 @@ function MessageSection() {
               ところで、お前も鬼にならないか？<br />
             </p>
             <div className="flex justify-center">
-              <Button href="/">SEE MORE</Button>
+              <Button href="/about_us">SEE MORE</Button>
             </div>
           </div>
         </div>

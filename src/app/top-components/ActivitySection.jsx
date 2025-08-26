@@ -24,7 +24,7 @@ function ActivitySection( ) {
         <p className="text-[30px] font-bold mb-[14px]">活動記録</p>
 
         {/* カード一覧 */}
-        <div className="flex flex-col lg:flex-row justify-between ">
+        <div className="flex h-[850px] flex-col lg:flex-row justify-between ">
           {items.slice(0, 3).map((item) => (
             <Link
               className="relative mb-14"
@@ -48,7 +48,7 @@ function ActivitySection( ) {
 
         {/* MOREボタン */}
         <div className="text-center">
-          <Button href="/">SEE MORE</Button>
+          <Button href="/activities">SEE MORE</Button>
         </div>
       </div>
     </section>
