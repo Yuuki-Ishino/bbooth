@@ -32,10 +32,10 @@ export default async function ActivityDetail({ params }) {
               <p>活動日: {activity.date}</p>
             </div>
             <div className="flex items-center gap-2">
-              <p>活動場所: {activity.location || "未定"}</p>
+              <p>活動場所: {activity.location || "宇宙"}</p>
             </div>
             <div className="flex items-center gap-2">
-              <p>参加人数: {activity.num_people || "どなたでも"}</p>
+              <p>参加人数: {activity.num_people || "みんな"}</p>
             </div>
           </div>
 
