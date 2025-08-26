@@ -25,7 +25,7 @@ function ContactSection() {
           <div className="flex space-x-8 mx-auto">
             {/* INSTAGRAM */}
             <a
-              href="https://www.instagram.com/bbooth2025"
+              href="https://instagram.com/bbooth2025"
               target="_blank"
               rel="noopener noreferrer"
               className="text-4xl hover:text-pink-400 active:text-pink-400 transition-colors"
