@@ -18,10 +18,10 @@ function ActivitySection( ) {
     <section className="text-white lg:py-20">
       <div className="w-[90%] mx-auto max-w-[1280px] pb-20 border-b border-white">
         {/* サブタイトル */}
-        <p className="text-[20px] font-bold mb-5">ACTIVITIES</p>
+        <p className="text-[20px] font-bold mb-5">PAST ACTIVITIES</p>
 
         {/* タイトル */}
-        <p className="text-[30px] font-bold mb-[14px]">活動記録</p>
+        <p className="text-[30px] font-bold mb-[14px]">今までの活動</p>
 
         {/* カード一覧 */}
         <div className="flex h-[850px] flex-col lg:flex-row justify-between ">
