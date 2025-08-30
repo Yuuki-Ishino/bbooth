@@ -10,7 +10,7 @@ function ActivitySection({ timeFilter  = "all" }) {
   useEffect(() => {
     fetch("/data/activities.json")
     .then((res) => res.json())
-    .then((data) => setItems(data.items))
+    .then((data) => setItems(data))
     .catch((err) => console.error(err))
   }, []);
 

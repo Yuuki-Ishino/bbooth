@@ -13,8 +13,8 @@ function ActivitySection() {
     .then((res) => res.json())
     .then((data) => {
       const now = new Date();
-      const past = data.items.filter((item) => new Date(item.date) < now);
-      const future = data.items.filter((item) => new Date(item.date) >= now);
+      const past = data.filter((item) => new Date(item.date) < now);
+      const future = data.filter((item) => new Date(item.date) >= now);
 
       past.sort((a, b) => new Date(b.date) - new Date(a.date));
       future.sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -37,14 +37,14 @@ function ActivitySection() {
         <div className="flex flex-col lg:flex-row justify-between ">
           {pastItems.slice(0, 3).map((item) => (
             <Link
-              className="relative mb-14 h-[225px]"
+              className="relative mb-14"
               key={item.id}
               href={`/activities/${item.id}`}
             >
               <img
                 src={item.image}
                 alt={item.alt}
-                className="w-full rounded-[20px] hover:opacity-70 active:opaicty-70"
+                className="w-full h-[225px] rounded-[20px] hover:opacity-70 active:opaicty-70"
               />
               <p className="bg-white/80 text-black font-bold inline-block absolute bottom-[6px] left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-[10px]">
                 {item.title}

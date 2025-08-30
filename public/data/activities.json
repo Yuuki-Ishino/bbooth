@@ -1,76 +1,74 @@
-{
-  "items": [
-    {
-      "id": 1,
-      "title": "増上寺1",
-      "date": "2024-4-12",
-      "image": "/images/top-image.jpg",
-      "alt": "増上寺",
-      "tag": "ボランティア",
-      "description": "公園で開催しました!子どもから大人まで約100人が参加。"
-    },
-    {
-      "id": 2,
-      "title": "増上寺2",
-      "date": "2024-5-28",
-      "image": "/images/top-image.jpg",
-      "alt": "増上寺",
-      "tag": "ボランティア",
-      "description": "公園で開催しました!子どもから大人まで約100人が参加。"
-    },
-    {
-      "id": 3,
-      "title": "増上寺3",
-      "date": "2024-6-6",
-      "image": "/images/top-image.jpg",
-      "alt": "増上寺",
-      "tag": "ボランティア",
-      "description": "公園で開催しました!子どもから大人まで約100人が参加。"
-    },
-    {
-      "id": 4,
-      "title": "増上寺4",
-      "date": "2024-6-6",
-      "image": "/images/top-image.jpg",
-      "alt": "増上寺",
-      "tag": "ボランティア",
-      "description": "公園で開催しました!子どもから大人まで約100人が参加。"
-    },
-    {
-      "id": 5,
-      "title": "増上寺5",
-      "date": "2025-9-2",
-      "image": "/images/top-image.jpg",
-      "alt": "増上寺",
-      "tag": "ボランティア",
-      "description": "公園で開催しました!子どもから大人まで約100人が参加。"
-    },
-    {
-      "id": 6,
-      "title": "増上寺6",
-      "date": "2025-9-13",
-      "image": "/images/top-image.jpg",
-      "alt": "増上寺",
-      "tag": "ボランティア",
-      "description": "公園で開催しました!子どもから大人まで約100人が参加。"
-    },
-    {
-      "id": 7,
-      "title": "増上寺7",
-      "date": "2025-10-3",
-      "image": "/images/top-image.jpg",
-      "alt": "増上寺",
-      "tag": "ボランティア",
-      "description": "公園で開催しました!子どもから大人まで約100人が参加。"
-    },
-    {
-      "id": 8,
-      "title": "増上寺8",
-      "date": "2025-10-2",
-      "image": "/images/top-image.jpg",
-      "alt": "増上寺",
-      "tag": "ボランティア",
-      "description": "公園で開催しました!子どもから大人まで約100人が参加。"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "title": "増上寺1",
+    "date": "2024-4-12",
+    "image": "/images/top-image.jpg",
+    "alt": "増上寺",
+    "tag": "ボランティア",
+    "description": "公園で開催しました!子どもから大人まで約100人が参加。"
+  },
+  {
+    "id": 2,
+    "title": "増上寺2",
+    "date": "2024-5-28",
+    "image": "/images/top-image.jpg",
+    "alt": "増上寺",
+    "tag": "ボランティア",
+    "description": "公園で開催しました!子どもから大人まで約100人が参加。"
+  },
+  {
+    "id": 3,
+    "title": "増上寺3",
+    "date": "2024-6-6",
+    "image": "/images/top-image.jpg",
+    "alt": "増上寺",
+    "tag": "ボランティア",
+    "description": "公園で開催しました!子どもから大人まで約100人が参加。"
+  },
+  {
+    "id": 4,
+    "title": "増上寺4",
+    "date": "2024-6-6",
+    "image": "/images/top-image.jpg",
+    "alt": "増上寺",
+    "tag": "ボランティア",
+    "description": "公園で開催しました!子どもから大人まで約100人が参加。"
+  },
+  {
+    "id": 5,
+    "title": "増上寺5",
+    "date": "2025-9-2",
+    "image": "/images/top-image.jpg",
+    "alt": "増上寺",
+    "tag": "ボランティア",
+    "description": "公園で開催しました!子どもから大人まで約100人が参加。"
+  },
+  {
+    "id": 6,
+    "title": "増上寺6",
+    "date": "2025-9-13",
+    "image": "/images/top-image.jpg",
+    "alt": "増上寺",
+    "tag": "ボランティア",
+    "description": "公園で開催しました!子どもから大人まで約100人が参加。"
+  },
+  {
+    "id": 7,
+    "title": "増上寺7",
+    "date": "2025-10-3",
+    "image": "/images/top-image.jpg",
+    "alt": "増上寺",
+    "tag": "ボランティア",
+    "description": "公園で開催しました!子どもから大人まで約100人が参加。"
+  },
+  {
+    "id": 8,
+    "title": "増上寺8",
+    "date": "2025-10-2",
+    "image": "/images/top-image.jpg",
+    "alt": "増上寺",
+    "tag": "ボランティア",
+    "description": "公園で開催しました!子どもから大人まで約100人が参加。"
+  }
+]
