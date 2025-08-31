@@ -7,7 +7,7 @@ export default async function ActivityDetail({ params }) {
     if (!res.ok) throw new Error("データの取得に失敗");
 
     const data = await res.json();
-    const activity = data.items.find(item => item.id.toString() === params.id);
+    const activity = data.find(item => item.id.toString() === params.id);
 
     if (!activity) {
       return <p className="p-16 text-white">投稿が見つかりませんでした。</p>;

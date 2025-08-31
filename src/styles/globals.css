@@ -14,8 +14,7 @@ section.no-bg {
   height: 700px;
   inset: 0;
   z-index: -1;
-  background-image: url('top-image.jpg');
+  background-image: url('https://vqsvlqcvaktgngyoxuyp.supabase.co/storage/v1/object/public/activity-imgs/top-image.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: repeat;
 }

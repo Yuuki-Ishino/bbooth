@@ -3,32 +3,29 @@
 import Button from "../components/Button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { getPastActivities, getLatestActivities } from "$/services/supabaseApi";
-import ActivityModal from "../components/ActivityModal";
+
 
 function ActivitySection() {
+  
   const [pastItems, setPastItems] = useState([]);
-  const [latestItems, setLatestItems] = useState([]);
-  const [selectedActivity, setSelectedActivity] = useState();
+  const [futureItems, setFutureItems] = useState([]);
 
   useEffect(() => {
-    const fetchActivities = async () => {
-      try {
-        const past = await getPastActivities(3);
-        if (!past) return;
+    fetch("/data/activities.json")
+    .then((res) => res.json())
+    .then((data) => {
+      const now = new Date();
+      const past = data.filter((item) => new Date(item.date) < now);
+      const future = data.filter((item) => new Date(item.date) >= now);
 
-        const latest = await getLatestActivities(3);
-        if (!latest) return;
+      past.sort((a, b) => new Date(b.date) - new Date(a.date));
+      future.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-        setPastItems(past);
-        setLatestItems(latest);
-      } catch (error) {
-        console.log("Error fetching activities", error);
-      }
-    };
-
-    fetchActivities();
-  }, []);
+      setPastItems(past);
+      setFutureItems(future);
+    })
+    .catch((err) => console.error(err))
+  }, [])
 
   return (
     <section className="text-white lg:py-20">
@@ -40,11 +37,11 @@ function ActivitySection() {
         <p className="text-[30px] font-bold mb-[14px]">今までの活動</p>
         {/* カード一覧 */}
         <div className="flex flex-col lg:flex-row justify-between ">
-          {pastItems.map((item) => (
-            <div
+          {pastItems.slice(0, 3).map((item) => (
+            <Link
               className="relative mb-14"
               key={item.id}
-              onClick={() => setSelectedActivity(item)}
+              href={`/activities/${item.id}`}
             >
               <img
                 src={item.image}
@@ -57,7 +54,7 @@ function ActivitySection() {
               <p className="bg-white/80 text-black font-bold inline-block absolute top-[10px] right-[10px] px-1.5 py-2 rounded-[10px]">
                 {item.date}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
         {/* MOREボタン */}
@@ -72,11 +69,11 @@ function ActivitySection() {
         <p className="text-[30px] font-bold mb-[14px]">これからの活動</p>
         {/* カード一覧 */}
         <div className="flex flex-col lg:flex-row justify-between ">
-          {latestItems.map((item) => (
-            <div
+          {futureItems.slice(0, 3).map((item) => (
+            <Link
               className="relative mb-14"
               key={item.id}
-              onClick={() => setSelectedActivity(item)}
+              href={`/activities/${item.id}`}
             >
               <img
                 src={item.image}
@@ -89,7 +86,7 @@ function ActivitySection() {
               <p className="bg-white/80 text-black font-bold inline-block absolute top-[10px] right-[10px] px-1.5 py-2 rounded-[10px]">
                 {item.date}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -98,13 +95,6 @@ function ActivitySection() {
           <Button href="/activities" timeFilter="future">SEE MORE</Button>
         </div>
       </div>
-
-      {selectedActivity && (
-        <ActivityModal
-          activity={selectedActivity}
-          onClose={() => setSelectedActivity(null)}
-        />
-      )}
     </section>
   );
 }

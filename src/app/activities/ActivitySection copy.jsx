@@ -2,11 +2,12 @@
 
 import { supabase } from "$/utils/supabase/client";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import ActivityModal from "../components/ActivityModal";
 
 function ActivitySection() {
   const [activities, setActivities] = useState([]);
-  const [selectedActivity, setSelectedActivity] = useState();
+  const [selectedActivity, setSelectedActivity] = useState([]);
   const [rangeEnd, setRangeEnd] = useState(2);
   const [loading, setLoading] = useState(false);
   const loaderRef = useRef(null);
@@ -62,10 +63,10 @@ function ActivitySection() {
         {/* カード一覧 */}
         <div className="flex flex-col lg:flex-row justify-between ">
           {activities.map((item) => (
-            <div
+            <Link
               className="relative mb-14"
               key={item.id}
-              onClick={() => setSelectedActivity(item)}
+              href={`/activities/${item.id}`}
             >
               <img
                 src={item.image}
@@ -78,16 +79,9 @@ function ActivitySection() {
               <p className="bg-white/80 text-black font-bold inline-block absolute top-[10px] right-[10px] px-1.5 py-2 rounded-[10px]">
                 {item.date}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
-
-        {selectedActivity && (
-          <ActivityModal
-            activity={selectedActivity}
-            onClose={() => setSelectedActivity(null)}
-          />
-        )}
         <div ref={loaderRef} className="flex item-center justify-center"/>
       </div>
     </section>
