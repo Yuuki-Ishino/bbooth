@@ -1,9 +1,16 @@
 import { supabase } from "../utils/supabase/client";
 
 // 活動全データ取得
-export async function getActivities() {
-  const { data, error } = await supabase.from("activities").select("*");
-  if (error) throw error;
+export async function getAllActivities() {
+  const { data, error } = await supabase
+    .from("activities")
+    .select("*")
+    .order("date", {ascending: false});
+
+  if (error) {
+    console.error(error);
+    return ;
+  }
   return data;
 }
 
