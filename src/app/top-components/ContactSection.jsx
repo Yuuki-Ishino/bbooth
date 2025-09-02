@@ -3,7 +3,7 @@ import { FaLine, FaXTwitter, FaInstagram } from "react-icons/fa6";
 
 function ContactSection() {
   return (
-    <section className="text-white pt-20">
+    <section id="contact" className="text-white pt-20">
       <div className="w-[90%] mx-auto max-w-[1280px] pb-20 border-b border-white">
         <div className="flex flex-col justify-between">
           {/* メッセージ */}

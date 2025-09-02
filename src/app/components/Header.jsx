@@ -13,7 +13,7 @@ function Header() {
     {href: '/about_us', label: '私たちについて'},
     {href: '/intro', label: '活動紹介'},
     {href: '/activities', label: '活動一覧'},
-    {href: '/contact', label: 'お問い合わせ'},
+    {href: '/#contact', label: 'お問い合わせ'},
   ];
 
   const renderNavItems = () =>

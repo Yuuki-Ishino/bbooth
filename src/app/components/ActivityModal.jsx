@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useEffect} from "react";
+import React from "react";
 import { RemoveScroll } from "react-remove-scroll";
 
 export default function ActivityModal({ activity, onClose }) {
@@ -8,7 +8,7 @@ export default function ActivityModal({ activity, onClose }) {
 
   return (
     <RemoveScroll>
-            <div
+      <div
         className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
         onClick={onClose} // 背景クリックで閉じる
       >
