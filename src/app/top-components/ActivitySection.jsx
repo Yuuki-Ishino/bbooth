@@ -1,37 +1,16 @@
-"use client";
-
 import Button from "../components/Button";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { getPastActivities, getLatestActivities } from "$/services/supabaseApi";
 import ActivityModal from "../components/ActivityModal";
+import ActivityCardClient from "../components/ActivityCardClient";
+import { getPastActivities, getLatestActivities } from "$/services/supabaseApi";
 
-function ActivitySection() {
-  const [pastItems, setPastItems] = useState([]);
-  const [latestItems, setLatestItems] = useState([]);
-  const [selectedActivity, setSelectedActivity] = useState();
-
-  useEffect(() => {
-    const fetchActivities = async () => {
-      try {
-        const past = await getPastActivities(3);
-        if (!past) return;
-
-        const latest = await getLatestActivities(3);
-        if (!latest) return;
-
-        setPastItems(past);
-        setLatestItems(latest);
-      } catch (error) {
-        console.log("Error fetching activities", error);
-      }
-    };
-
-    fetchActivities();
-  }, []);
+export default async function ActivitySection() {
+  const pastItems = await getPastActivities(3);
+  const latestItems = await getLatestActivities(3);
+  
+  let selectedActivity = null;
 
   return (
-    <section className="text-white lg:py-20">
+    <section className="text-white pt-20 lg:py-20">
       <div className="w-[90%] mx-auto max-w-[1280px] pb-20 border-b border-white">
         {/* 過去の活動 */}
         {/* サブタイトル */}
@@ -39,25 +18,12 @@ function ActivitySection() {
         {/* タイトル */}
         <p className="text-[30px] font-bold mb-[14px]">今までの活動</p>
         {/* カード一覧 */}
-        <div className="flex flex-col lg:flex-row justify-between ">
+        <div className="flex flex-col lg:flex-row justify-between">
           {pastItems.map((item) => (
-            <div
-              className="relative mb-14"
+            <ActivityCardClient 
               key={item.id}
-              onClick={() => setSelectedActivity(item)}
-            >
-              <img
-                src={item.image}
-                alt={item.alt}
-                className="w-full h-[225px] rounded-[20px] hover:opacity-70 active:opaicty-70"
-              />
-              <p className="bg-white/80 text-black font-bold inline-block absolute bottom-[6px] left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-[10px]">
-                {item.title}
-              </p>
-              <p className="bg-white/80 text-black font-bold inline-block absolute top-[10px] right-[10px] px-1.5 py-2 rounded-[10px]">
-                {item.date}
-              </p>
-            </div>
+              activity={item}
+            />
           ))}
         </div>
         {/* MOREボタン */}
@@ -73,23 +39,10 @@ function ActivitySection() {
         {/* カード一覧 */}
         <div className="flex flex-col lg:flex-row justify-between ">
           {latestItems.map((item) => (
-            <div
-              className="relative mb-14"
+            <ActivityCardClient 
               key={item.id}
-              onClick={() => setSelectedActivity(item)}
-            >
-              <img
-                src={item.image}
-                alt={item.alt}
-                className="w-full h-[225px] rounded-[20px] hover:opacity-70 active:opaicty-70"
-              />
-              <p className="bg-white/80 text-black font-bold inline-block absolute bottom-[6px] left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-[10px]">
-                {item.title}
-              </p>
-              <p className="bg-white/80 text-black font-bold inline-block absolute top-[10px] right-[10px] px-1.5 py-2 rounded-[10px]">
-                {item.date}
-              </p>
-            </div>
+              activity={item}
+            />
           ))}
         </div>
 
@@ -98,15 +51,6 @@ function ActivitySection() {
           <Button href="/activities" timeFilter="future">SEE MORE</Button>
         </div>
       </div>
-
-      {selectedActivity && (
-        <ActivityModal
-          activity={selectedActivity}
-          onClose={() => setSelectedActivity(null)}
-        />
-      )}
     </section>
   );
 }
-
-export default ActivitySection;

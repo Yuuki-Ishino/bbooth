@@ -3,7 +3,7 @@ import Button from "@/app/components/Button.jsx";
 
 function MessageSection() {
   return (
-    <section className="text-white py-20">
+    <section className="text-white pt-20">
       <div className="w-[90%] mx-auto max-w-[1280px] pb-15 border-b border-white">
         <div className="flex flex-col justify-between">
           {/* メッセージ */}
