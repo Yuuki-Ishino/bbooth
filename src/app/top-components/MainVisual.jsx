@@ -1,7 +1,7 @@
 function MainVisual() {
 	return (
 		<section
-			className="h-[600px] w-full no-bg"
+			className="h-[700px] w-full no-bg"
 		>
 			{/* <div className="absolute inset-0 -z-10">
 				<img 
