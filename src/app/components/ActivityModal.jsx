@@ -37,13 +37,13 @@ export default function ActivityModal({ activity, onClose }) {
           {/* 投稿情報 */}
           <div className="py-4 space-y-3 border-b border-white">
             <div className="flex items-center gap-2">
-              <p>活動日: {activity.date}</p>
+              <p>活動日: {activity.date || "未定"}</p>
             </div>
             <div className="flex items-center gap-2">
-              <p>活動場所: {activity.location || "宇宙"}</p>
+              <p>活動場所: {activity.location || "未定"}</p>
             </div>
             <div className="flex items-center gap-2">
-              <p>参加人数: {activity.num_people || "みんな"}</p>
+              <p>参加人数: {activity.num_people || "未定"}</p>
             </div>
           </div>
 

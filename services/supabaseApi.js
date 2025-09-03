@@ -1,4 +1,5 @@
 import { supabase } from "../utils/supabase/client";
+import nowJST from "@/app/components/Day";
 
 // 活動全データ取得
 export async function getAllActivities() {
@@ -14,9 +15,9 @@ export async function getAllActivities() {
   return data;
 }
 
-//　直後のアクティビティ取得
+//　過去のアクティビティ取得
 export async function getPastActivities( num ) {
-  const today = new Date().toISOString().split("T")[0];
+  const today = nowJST();
 
   const { data, error } = await supabase
     .from("activities")
@@ -35,8 +36,8 @@ export async function getPastActivities( num ) {
 
 // 直近のアクティビティ取得
 export async function getLatestActivities( num ) {
-  const today = new Date().toISOString().split("T")[0];
-
+  const today = nowJST();
+  
   const { data, error } = await supabase
     .from("activities")
     .select("*")
