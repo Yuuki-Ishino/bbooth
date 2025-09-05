@@ -14,13 +14,13 @@ section.no-bg {
   height: px;
   inset: 0;
   z-index: -1;
-  background-image: url('../../public/images/top-image.jpg');
+  background-image: url('top-image.jpg');
   background-size: cover;
   background-position: center;
 }
 
 @media (max-width: 770px) {
   .bg-img::before {
-    background-image: url('../../public/images/top-img01.jpg');
+    background-image: url('top-img01.jpg');
   }
 }
