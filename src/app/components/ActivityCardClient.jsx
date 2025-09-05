@@ -13,7 +13,7 @@ export default function ActivityCardClient({ activity }) {
 				onClick={() => setSelectedActivity(activity)}
 			>
 				<img
-					src={activity.image}
+					src={activity.imageUrl}
 					alt={activity.alt}
 					className="w-full h-[225px] rounded-[20px] hover:opacity-70 active:opaicty-70"
 				/>

@@ -26,7 +26,7 @@ export default function ActivityModal({ activity, onClose }) {
 
           {/* ヘッダー画像 */}
           <img
-            src={activity.image}
+            src={activity.imageUrl}
             alt={activity.alt}
             className="w-full h-64 object-cover rounded-lg"
           />

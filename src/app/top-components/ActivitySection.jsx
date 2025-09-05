@@ -1,13 +1,10 @@
 import Button from "../components/Button";
-import ActivityModal from "../components/ActivityModal";
 import ActivityCardClient from "../components/ActivityCardClient";
 import { getPastActivities, getLatestActivities } from "$/services/supabaseApi";
 
 export default async function ActivitySection() {
   const pastItems = await getPastActivities(3);
   const latestItems = await getLatestActivities(3);
-  
-  let selectedActivity = null;
 
   return (
     <section className="text-white pt-20 lg:py-20">

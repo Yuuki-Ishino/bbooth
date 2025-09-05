@@ -14,6 +14,7 @@ function Header() {
     {href: '/intro', label: '活動紹介'},
     {href: '/activities', label: '活動一覧'},
     {href: '/#contact', label: 'お問い合わせ'},
+    {href: '/activities/new', label: '記事作成'},
   ];
 
   const renderNavItems = () =>
