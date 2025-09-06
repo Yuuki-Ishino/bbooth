@@ -28,10 +28,6 @@ export async function addActivity(formData) {
 			throw new Error("画像アップロード失敗");
 		}
 		const { data } = supabase.storage.from("activity-imgs").getPublicUrl(fileName);
-		if (data)
-			console.log(data)
-		else
-			console.log("データ入ってねぇんだよ！！");
 		imageUrl = data.publicUrl
 	}
 
