@@ -45,7 +45,7 @@ export default function AddActivityForm() {
 		<input type="text" name="location" placeholder="場所" className="border p-2 w-full" />
 		<input type="number" name="num_people" placeholder="参加人数" className="border p-2 w-full" />
 		<textarea name="description" placeholder="説明" className="border p-2 w-full" rows={5} />
-		<input type="file" name="image" className="border" accept="image/*, .heic" onChange={handleFileChange}/>
+		<input type="file" name="image" className="border" accept="image/jpg" onChange={handleFileChange}/>
 		<button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
 			追加
 		</button>
